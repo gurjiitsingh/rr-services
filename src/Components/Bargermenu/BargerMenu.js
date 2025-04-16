@@ -40,7 +40,7 @@ export const BargerMenu = () => {
                   className="p-2 mb-2 border-2 border-zinc-100 rounded-xl"
                   aria-label="close Menu"
                 >
-                  <IoClose />
+                  <IoClose className="text-white" />
                 </button>
               </div>
 
@@ -51,13 +51,13 @@ export const BargerMenu = () => {
                   return (
                     <li key={title}>
                       <a
-                        onClick={bargerMenuToggle}
+                        onClick={()=>bargerMenuToggle(false)}
                         href={href}
                         className="flex items-center justify-between gap-5 p-5 transition-all border-b-2 hover:bg-zinc-400 border-zinc-100"
                       >
-                        <motion.span {...framerText(idx)} className='text-white bg-red-400 rounded-2xl py-1 px-2'>{title}</motion.span>
+                        <motion.span {...framerText(idx)} className='text-slate-500 bg-amber-400 rounded-2xl py-1 px-2'>{title}</motion.span>
                         <motion.div {...framerIcon}>
-                          <Icon className="text-2xl" />
+                          <Icon className="text-white text-2xl"  />
                         </motion.div>
                       </a>
                     </li>

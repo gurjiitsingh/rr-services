@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {
@@ -11,39 +11,30 @@ import {
 } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { UseSiteContext } from "@/SiteContext/SiteContext";
+import Header from "@/Components/Header";
+//import { usePathname } from "next/navigation";
 // import { Carousel } from "react-responsive-carousel";
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function Home() {
+  const { bargerMenuToggle } = UseSiteContext();
+
   useEffect(() => {
     AOS.init();
+    AOS.refresh();
+    bargerMenuToggle(false);
   }, []);
-  const { bargerMenuToggle } = UseSiteContext();
+
+ 
 
   return (
     <div className="bg-gray-100 text-gray-900">
       {/* Header */}
-      <header className="container mx-auto">
-        <div className="bg-amber-300 text-white  py-2 px-2 flex  items-center justify-between text-2xl font-bold">
-       <div className="">RRS</div>
-       <div>
-        <button
-          onClick={() => {
-            bargerMenuToggle(true);
-          }}
-          className="size-lg px-3 block lg:hidden"
-          aria-label="toggle burger menu"
-        >
-          <FaBars className="hidden md:block" size={40} />
-          <FaBars className="md:hidden" size={32} />
-        </button>
-        </div>
-        </div>
-      </header>
+   <Header />
 
       <section id="home" className="container mx-auto">
-        <div className="flex flex-col md:flex-row">
-          <div className="flex items-top flex-justify-center bg-blue-500 md:w-1/2">
+        <div className="flex flex-col lg:flex-row">
+          <div className="flex items-top flex-justify-center bg-blue-500 lg:w-1/2">
             <img src="/towing-14-copy-1-l.jpg" alt="Car Towing" />
           </div>
 
@@ -54,7 +45,7 @@ export default function Home() {
               backgroundPosition: "right",
               backgroundSize: "fit",
             }}
-            className="flex items-center min-h-[380px] justify-start md:w-1/2"
+            className="flex items-center min-h-[380px] justify-start lg:w-1/2"
           >
             <div className="pl-3 h-[340px] flex flex-col  justify-start text-white">
               <h1 className="text-2xl text-slate-50 p-4">Why choose us</h1>
@@ -314,24 +305,28 @@ export default function Home() {
             count on. With years of experience and a commitment to customer
             satisfaction, we aim to get you back on the road safely and swiftly.
           </p>
-          <p className="text-lg ">
-          <div className="flex gap-2 items-center">
-          <FaPhoneAlt className="mr-2" /> <strong>Call us anytime:</strong>{" "}
-            <a href="tel:6094566373" className="text-blue-600 hover:underline">
-              609-456-6373
-            </a>
-            </div>
-            <br />
+
+          <div className="text-lg space-y-2">
             <div className="flex gap-2 items-center">
-            <FaEnvelope className="mr-2" /> <strong>Email:</strong>{" "}
-            <a
-              href="mailto:reliableroadsideservicesnj@gmail.com"
-              className="text-blue-600 hover:underline"
-            >
-              reliableroadsideservicesnj@gmail.com
-            </a>
+              <FaPhoneAlt className="mr-2" /> <strong>Call us anytime:</strong>{" "}
+              <a
+                href="tel:6094566373"
+                className="text-blue-600 hover:underline"
+              >
+                609-456-6373
+              </a>
             </div>
-          </p>
+
+            <div className="flex gap-2 items-center">
+              <FaEnvelope className="mr-2" /> <strong>Email:</strong>{" "}
+              <a
+                href="mailto:reliableroadsideservicesnj@gmail.com"
+                className="text-blue-600 hover:underline"
+              >
+                reliableroadsideservicesnj@gmail.com
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -347,10 +342,7 @@ export default function Home() {
       </div>
       {/* Footer */}
       <footer className="bg-[#133C72] container mx-auto text-white text-center py-4">
-        <p>
-          &copy; {new Date().getFullYear()} Reliable Roadside Services. All
-          Rights Reserved.
-        </p>
+        <p>&copy; 2025 Reliable Roadside Services. All Rights Reserved.</p>
         <p className="text-sm">
           Developed by{" "}
           <a href="https://gstadeveloper.com" className="underline">

@@ -33,8 +33,7 @@ export const SiteProvider: React.FC<Props> = ({
 
 
   function bargerMenuToggle(e:boolean) {
-    console.log("tes")
-    setOpenBargerMenu(e);
+     setOpenBargerMenu(e);
   }
  
 
