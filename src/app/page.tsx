@@ -48,13 +48,13 @@ export default function Home() {
             className="flex items-center min-h-[380px] justify-start lg:w-1/2"
           >
             <div className="pl-3 h-[340px] flex flex-col  justify-start text-white">
-              <h1 className="text-2xl text-slate-50 p-4">Why choose us</h1>
+              <h1 className="text-3xl text-slate-50 py-4 "><span className="font-bold">Reliable Roadside </span><span className="font-light">Services</span> </h1>
               <div
                 className="hero_text aos-init aos-animate"
                 data-aos="fade-left"
                 data-aos-duration="3000"
               >
-                Looking for qualified professionals towing service.
+                Looking for<i> qualified professionals</i> towing service.
               </div>
               <div
                 data-aos="fade-left"
