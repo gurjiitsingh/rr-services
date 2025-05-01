@@ -8,10 +8,18 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Roboto } from 'next/font/google';
+
+// const roboto = Roboto({
+//   subsets: ['latin'],
+//   weight: ['400', '700'], // You can choose weights
+//   display: 'swap',
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +33,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        {/* Add Google Fonts in head */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Days+One&family=Dosis&family=Quicksand&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body >
         <SiteProvider>
         <BargerMenu />
         {children}

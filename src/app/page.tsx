@@ -11,7 +11,12 @@ import {
 } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { UseSiteContext } from "@/SiteContext/SiteContext";
-import Header from "@/Components/Header";
+import Header from "@/components/Header";
+import ServicesSection from "@/components/Services";
+import CreateWebsite from "@/components/Create-your-website";
+import FeaturesSection from "@/components/FeaturesSection";
+import WhyChooseUs from "@/components/Why-choose-us";
+import Slider from "@/components/Slider";
 //import { usePathname } from "next/navigation";
 // import { Carousel } from "react-responsive-carousel";
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -28,247 +33,18 @@ export default function Home() {
  
 
   return (
-    <div className="bg-gray-100 text-gray-900">
+    <div className="w-full mx-auto bg-gray-100 text-gray-900">
       {/* Header */}
    <Header />
 
-      <section id="home" className="container mx-auto">
-        <div className="flex flex-col lg:flex-row">
-          <div className="flex items-top flex-justify-center bg-blue-500 lg:w-1/2">
-            <img src="/towing-14-copy-1-l.jpg" alt="Car Towing" />
-          </div>
-
-          <div
-            style={{
-              backgroundImage: "url('/towing-14-copy-1-re.jpg')",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "right",
-              backgroundSize: "fit",
-            }}
-            className="flex items-center min-h-[380px] justify-start lg:w-1/2"
-          >
-            <div className="pl-3 h-[340px] flex flex-col  justify-start text-white">
-              <h1 className="text-3xl text-slate-50 py-4 "><span className="font-bold">Reliable Roadside </span><span className="font-light">Services</span> </h1>
-              <div
-                className="hero_text aos-init aos-animate"
-                data-aos="fade-left"
-                data-aos-duration="3000"
-              >
-                Looking for<i> qualified professionals</i> towing service.
-              </div>
-              <div
-                data-aos="fade-left"
-                className="max-w-md mx-auto p-4 space-y-4"
-              >
-                {/* Line 1 */}
-                <div className="flex items-center space-x-4">
-                  <img src="/check.png" alt="Check icon" className="w-6 h-6" />
-                  <span
-                    data-aos="fade-left"
-                    data-aos-duration="3000"
-                    className="aos-animate text-lg"
-                  >
-                    24/7 Roadside Assistance
-                  </span>
-                </div>
-
-                {/* Line 2 */}
-                <div
-                  data-aos="fade-left"
-                  className="flex items-center space-x-4"
-                >
-                  <img src="/check.png" alt="Wrench icon" className="w-6 h-6" />
-                  <span className="text-lg">Expert Technicians</span>
-                </div>
-
-                {/* Line 3 */}
-                <div
-                  data-aos="fade-left"
-                  className="flex items-center space-x-4"
-                >
-                  <img src="/check.png" alt="Clock icon" className="w-6 h-6" />
-                  <span className="text-lg">Fast Response Time</span>
-                </div>
-              </div>
-              <h2
-                data-aos="flip-left"
-                className="text-2xl rounded-2xl border text-slate-50 px-4 py-1"
-              >
-                Call 609-456-6373
-              </h2>
-            </div>
-          </div>
-        </div>
-        {/* <h1 className="text-4xl font-bold text-blue-900">Fast & Reliable Roadside Assistance</h1>
-        <p className="mt-4 text-lg text-gray-700">We provide quick and efficient towing and roadside assistance services to get you back on the road.</p> */}
-      </section>
-
+   
+<Slider />
       {/* Our Services */}
-      <section id="services" className=" container mx-auto">
-        <div className="bg-amber-300 text-slate-700 py-10 px-5 text-center">
-          <h2 className="text-3xl font-bold">Our Services</h2>
-          <p className="mt-2 text-lg text-slate-700">
-            We offer 24/7 roadside assistance, towing, battery jump-starts, and
-            more.
-          </p>
+      <ServicesSection />
 
-          <div className="flex flex-col justify-between md:flex-row mx-auto  ">
-            <div className="flex flex-col">
-              <div className="flex flex-wrap justify-center mt-6">
-                <div className="bg-white text-blue-900 m-3 p-5 rounded-lg shadow-lg w-60">
-                  <FaWrench className="text-4xl mx-auto" />
-                  <h3 className="font-bold mt-2">Towing</h3>
-                </div>
-                <div className="bg-white text-blue-900 m-3 p-5 rounded-lg shadow-lg w-60">
-                  <FaPhoneAlt className="text-4xl mx-auto" />
-                  <h3 className="font-bold mt-2">Emergency Assistance</h3>
-                </div>
-              </div>
-              <div className="">
-                <ul className="space-y-6 p-6 text-white">
-                  <li
-                    data-aos="fade-down"
-                    className="bg-[#133C72] flex items-center space-x-4  px-4 py-1 rounded-2xl shadow"
-                  >
-                    <div className="w-5 h-5 relative flex-shrink-0">
-                      <Image
-                        src="/check.png"
-                        alt="Check icon"
-                        layout="fill"
-                        objectFit="contain"
-                      />
-                    </div>
-                    <span className="text-lg font-medium">
-                      Tow Truck Services
-                    </span>
-                  </li>
-
-                  <li
-                    data-aos="fade-down"
-                    className="bg-[#133C72] flex items-center space-x-4  px-4 py-1 rounded-2xl shadow"
-                  >
-                    <div className="w-5 h-5 relative flex-shrink-0">
-                      <Image
-                        src="/check.png"
-                        alt="Check icon"
-                        layout="fill"
-                        objectFit="contain"
-                      />
-                    </div>
-                    <span className="text-lg font-medium">
-                      Mechanical Breakdowns & Engine Issues
-                    </span>
-                  </li>
-                  <li
-                    data-aos="fade-down"
-                    className="bg-[#133C72] flex items-center space-x-4  px-4 py-1 rounded-2xl shadow"
-                  >
-                    <div className="w-5 h-5 relative flex-shrink-0">
-                      <Image
-                        src="/check.png"
-                        alt="Check icon"
-                        layout="fill"
-                        objectFit="contain"
-                      />
-                    </div>
-                    <span className="text-lg font-medium">
-                      Ignition or Battery Troubles
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="">
-              <ul className="space-y-6 px-6 py-0 md:py-6 text-white">
-                <li
-                  data-aos="fade-down"
-                  className="bg-[#133C72] flex items-center space-x-4  px-4 py-1 rounded-2xl shadow"
-                >
-                  <div className="w-5 h-5 relative flex-shrink-0">
-                    <Image
-                      src="/check.png"
-                      alt="Check icon"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                  <span className="text-lg font-medium">
-                    Battery Jump-Start Assistance
-                  </span>
-                </li>
-
-                <li
-                  data-aos="fade-down"
-                  className="bg-[#133C72] flex items-center space-x-4  px-4 py-1 rounded-2xl shadow"
-                >
-                  <div className="w-5 h-5 relative flex-shrink-0">
-                    <Image
-                      src="/check.png"
-                      alt="Check icon"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                  <span className="text-lg font-medium">
-                    Accident Recovery Support
-                  </span>
-                </li>
-
-                <li
-                  data-aos="fade-down"
-                  className="bg-[#133C72] flex items-center space-x-4  px-4 py-1 rounded-2xl shadow"
-                >
-                  <div className="w-5 h-5 relative flex-shrink-0">
-                    <Image
-                      src="/check.png"
-                      alt="Check icon"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                  <span className="text-lg font-medium">
-                    Brake Inspection & Repair Services
-                  </span>
-                </li>
-
-                <li
-                  data-aos="fade-down"
-                  className="bg-[#133C72] flex items-center space-x-4  px-4 py-1 rounded-2xl shadow"
-                >
-                  <div className="w-5 h-5 relative flex-shrink-0">
-                    <Image
-                      src="/check.png"
-                      alt="Check icon"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                  <span className="text-lg font-medium">
-                    Safe Drive-Home Service (If Intoxicated)
-                  </span>
-                </li>
-
-                <li
-                  data-aos="fade-down"
-                  className="bg-[#133C72] flex items-center space-x-4  px-4 py-1 rounded-2xl shadow"
-                >
-                  <div className="w-5 h-5 relative flex-shrink-0">
-                    <Image
-                      src="/check.png"
-                      alt="Check icon"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                  <span className="text-lg font-medium">
-                    On-Site Mobile Tire Repairs
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CreateWebsite />
+      {/* <FeaturesSection />
+      <WhyChooseUs /> */}
 
       {/* Contact Us */}
       <section id="contact" className="text-slate-700  text-center">
