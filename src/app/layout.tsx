@@ -9,7 +9,7 @@ const geistSans = Geist({
 });
 
 import { Roboto } from 'next/font/google';
-
+import "@/css/style.css"
 // const roboto = Roboto({
 //   subsets: ['latin'],
 //   weight: ['400', '700'], // You can choose weights

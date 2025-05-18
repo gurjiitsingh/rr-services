@@ -2,15 +2,15 @@ import React from "react";
 
 const ServicesSection = () => {
   return (
-    <section className="service-area w-full flex justify-center " id="services">
-      <div className="container  mx-auto ">
+    <section className="service-area w-full " id="services">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-10">
         <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-3">
-          <div className="text-2xl">
+          <div className="w-full text-2xl flex flex-start">
             <h1>SERVICES</h1>
           </div>
           <div className="mf">
-            <h2>
+            <h2 className="w-full lg:w-1/2">
               You can ask the question regarding the issues we will solve that
               together for sure
             </h2>
